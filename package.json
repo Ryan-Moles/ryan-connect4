@@ -1,0 +1,18 @@
+{
+  "name": "ryan-connect4",
+  "version": "1.0.0",
+  "description": "by Ryan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "npx": "^10.2.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
