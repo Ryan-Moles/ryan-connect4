@@ -1,0 +1,20 @@
+{
+  "name": "ryan-connect4",
+  "version": "1.0.0",
+  "description": "by Ryan",
+  "main": "connectors.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx esbuild connectors.ts --bundle --minify --sourcemap=inline --outfile=./build/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.21.5",
+    "npx": "^10.2.2"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
