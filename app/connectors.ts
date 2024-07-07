@@ -35,10 +35,10 @@ function populateHtmlGridWithBoardState(board: Cell[][]) {
       if (!board[rowIndex][columnIndex]) {
         continue;
       }
-      const cellText = board[rowIndex][columnIndex] === redPlayer ? "🛑" : "🌕";
+      const cellPlayer = board[rowIndex][columnIndex] === redPlayer ? "redSlots" : "yellowSlots";
       document.getElementById(
         `row-${rowIndex}-column-${columnIndex}`
-      )!.innerText = cellText;
+      )!.className = cellPlayer;
     }
   }
 }
@@ -74,9 +74,9 @@ function positionClick(row: number, column: number) {
     setBoard(board);
     setCurrentPlayer(switchPlayer(getCurrentPlayer()));
 
-    if (!isValidRowOrColumn(board[0]) || !board.every(isValidColumn)) {
-      throw `Expecting "getBoard" to return a 2d array where all values are one of the strings ${validCellValues}. Actually received: ${JSON.stringify(board)}`;
-    }
+    // if (!isValidRowOrColumn(board[0]) || !board.every(isValidColumn)) {
+    //   throw `Expecting "getBoard" to return a 2d array where all values are one of the strings ${validCellValues}. Actually received: ${JSON.stringify(board)}`;
+    // }
     populateHtmlGridWithBoardState(board);
     const winner = checkWinner(board);
     console.log(winner);
@@ -116,6 +116,6 @@ export const bindClicks = () => {
   }
 };
 
-// const resetButton = document.getElementById('reset-button')!
-// resetButton.addEventListener('click', resetClick)
+const resetButton = document.getElementById('reset-button')!
+resetButton.addEventListener('click', resetClick)
 resetGame();
