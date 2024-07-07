@@ -1,7 +1,11 @@
+/* *{
+    border: 1px solid red
+} */
+
+
 #grid {
-    background-color: blue;
-    height: 800px;
     width: 800px;
+    background-color: blue;
     display: grid;
     align-items: center;
     justify-items: center;
@@ -12,20 +16,31 @@
     height:100px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     border: 20px;
 
 }
-.gridcols{
-    width:100px;
-    height:800px;
-    display: flex;
-    align-content: space-around;
-    border: 20px;
-}
-.square{
+
+.emptySlots{
     height:90px;
     width: 90px;
     background-color: bisque;
     border-radius: 50%;
     border: 10px;
+}
+
+.yellowSlots{
+    height:90px;
+    width: 90px;
+    background-color: yellow;
+    border-radius: 50%;
+    border: 10px
+}
+
+.redSlots{
+    height:90px;
+    width: 90px;
+    background-color: red;
+    border-radius: 50%;
+    border: 10px
 }
