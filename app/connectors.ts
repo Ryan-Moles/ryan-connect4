@@ -96,7 +96,7 @@ function positionClick(row: number, column: number) {
 }
 
 function resetClick(event: any) {
-  console.log("resetClick was called")
+  console.log("resetClick was called ")
   clearHtmlGrid();
   resetGame();
   winnerDisplay.style.backgroundColor = "white";
