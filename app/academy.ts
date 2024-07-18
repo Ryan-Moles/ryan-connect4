@@ -121,13 +121,18 @@ export function checkWinner(currentBoard: Cell[][]): Player { //NEED TO CHANGE T
 export function resetGame() {
   console.log("resetGame was called");
   gameOver = false;
-  turns = maxturns
-  setBoard([])
+  setBoard([]);
   getBoard();
-  bindClicks()
 
 }
 
+export function newGame() {
+  console.log("resetGame was called");
+  gameOver = false;
+  setBoard([]);
+  getBoard();
+  bindClicks()
+}
 export function getCurrentPlayer(): Player {
   return player;
 }

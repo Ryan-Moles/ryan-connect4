@@ -22,7 +22,7 @@ function clearHtmlGrid() {
     for (let columnIndex = 0; columnIndex < columns; columnIndex++) {
       document.getElementById(
         `row-${rowIndex}-column-${columnIndex}`
-      )!.innerHTML = "";
+      )!.className = "";
     }
   }
 }
@@ -96,9 +96,11 @@ function positionClick(row: number, column: number) {
 }
 
 function resetClick(event: any) {
+  console.log("resetClick was called")
+  clearHtmlGrid();
   resetGame();
   winnerDisplay.style.backgroundColor = "white";
-  clearHtmlGrid();
+  
 }
 
 // Bind the click events for the grid.
