@@ -78,7 +78,7 @@ function positionClick(row: number, column: number) {
     //   throw `Expecting "getBoard" to return a 2d array where all values are one of the strings ${validCellValues}. Actually received: ${JSON.stringify(board)}`;
     // }
     populateHtmlGridWithBoardState(board);
-    const winner = checkWinner(board);
+    const winner = checkWinner(board, [row, column]);
     console.log(winner);
     if (winner) {
       if (typeof winner !== "string" || !validWinValues.includes(winner)) {

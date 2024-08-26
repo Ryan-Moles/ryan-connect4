@@ -1,4 +1,4 @@
-import { Player, Cell, getBoard, setBoard, maxturns, rows } from "./board";
+import { Player, Cell, getBoard, setBoard, maxturns, rows, columns, winNumber } from "./board";
 import { bindClicks } from "./connectors";
 
 export const redPlayer = 1;
@@ -46,9 +46,23 @@ export function switchPlayer(currentPlayer: Player): Player {
   return currentPlayer;
 }
 
-export function checkWinner(currentBoard: Cell[][]): Player { //NEED TO CHANGE TOO MAKE IT WORK FOR ANY SPECIFIED LENGTH
+export function checkWinner(currentBoard: Cell[][], turnPosition: number[]): Player { //NEED TO CHANGE TOO MAKE IT WORK FOR ANY SPECIFIED LENGTH
   console.log("checkWinner was called");
   console.log(`turns = ${turns}`)
+  const startCheckFlat = ([row, column]:number[]) => {
+    let turn:number[] = [row, column]
+    let win:Player = undefined
+    //check left 
+    while (turn[1] >= 0 ) {
+      if ((turn[1] + winNumber) <columns ) {
+        if (currentBoard[turn[0],turn[1]] == currentBoard[turn[0],turn[1]+1] && currentBoard[turn[0],turn[1]+1] == currentBoard[turn[0],turn[1]+2] && currentBoard[turn[0],turn[1]+2] == currentBoard[turn[0],turn[1]+3]) {
+          if (currentBoard[turn[0], turn[1]] == 1){
+
+          }
+       }
+    }
+  }
+  let start = startCheckPosition(turnPosition)
   if (
     currentBoard[0][0] != null &&
     currentBoard[0][0] == currentBoard[1][1] &&
